@@ -1,0 +1,423 @@
+/* Estilos para la navegación */
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex; /* Cambiar a flex para alinear horizontalmente */
+    justify-content: center; /* Centrar los elementos horizontalmente */
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: color 0.3s;
+    font-size: 24px; /* Tamaño de fuente para los íconos */
+}
+
+nav ul li a:hover {
+    color: #00ffff; /* Color cian al pasar el ratón */
+}
+
+/* Estilos para la sección de Proyectos */
+#proyectos .container {
+    display: flex; /* Aplicar Flexbox para alinear proyectos */
+    flex-wrap: wrap; /* Asegurar que los proyectos se ajusten automáticamente */
+    gap: 20px; /* Espacio entre los proyectos */
+    justify-content: center; /* Centrar los proyectos horizontalmente */
+    margin-top: 40px; /* Espacio superior entre la sección anterior */
+}
+
+.project {
+    width: 300px; /* Ancho fijo para cada proyecto */
+    background-color: #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    text-align: center; /* Alinear texto al centro */
+}
+
+.project h3 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 10px; /* Espacio inferior para el título */
+}
+
+.project p {
+    color: #ccc;
+    margin-bottom: 20px; /* Espacio inferior para el párrafo */
+}
+
+.project .ver-proyecto-web {
+    background-color: #00ffff;
+    color: #111;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.project .ver-proyecto-web:hover {
+    background-color: #005555;
+}
+
+/* Estilos para los íconos de contacto en la sección de Contacto */
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Espacio superior entre los íconos y el texto */
+}
+
+.contact-icon {
+    margin: 0 10px;
+    font-size: 30px;
+    color: #00ffff; /* Cian para los íconos */
+    transition: color 0.3s;
+}
+
+.contact-icon:hover {
+    color: #005555; /* Tono más oscuro al pasar el ratón */
+}
+
+/* Otros estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Para evitar el desplazamiento horizontal */
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    color: #fff; /* Cambiar el color del texto a blanco */
+}
+
+header {
+    background: #222; /* Gris oscuro para el encabezado */
+    color: #fff; /* Color del texto en el encabezado */
+    padding: 20px 0;
+    position: relative; /* Para que el contenido flote sobre el fondo */
+    z-index: 2; /* Asegura que el contenido esté encima del fondo */
+    text-align: center; /* Alinear texto al centro */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+    text-transform: uppercase; /* Texto en mayúsculas */
+}
+
+section {
+    padding: 40px 0;
+    text-align: center; /* Alinear texto al centro */
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #00ffff; /* Cian para los encabezados de sección */
+}
+
+footer {
+    background: #222; /* Gris oscuro para el pie de página */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative; /* Para que el contenido flote sobre el fondo */
+    z-index: 2; /* Asegura que el contenido esté encima del fondo */
+}
+
+/* Fondo animado futurista */
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Cambiado a -1 para colocarlo detrás del contenido */
+    background: radial-gradient(circle, #070707 0%, #0f0f0f 50%, #1a1a1a 100%);
+    background-size: 300% 300%;
+    animation: animateBackground 10s ease infinite;
+}
+
+@keyframes animateBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Estilos para la animación de botón */
+.ver-proyecto-web {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to right, #00ffff, #005555);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.ver-proyecto-web:hover {
+    background: linear-gradient(to right, #005555, #00ffff);
+}
+
+.ver-proyecto-web::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s;
+    border-radius: 50%;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+}
+
+.ver-proyecto-web:hover::before {
+    width: 0;
+    height: 0;
+}
+
+/* Estilos para la sección de Proyectos */
+#proyectos .project {
+    position: relative;
+    overflow: hidden;
+    background-color: #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+#proyectos .project:hover {
+    transform: translateY(-5px);
+}
+
+#proyectos .project::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: opacity 0.3s;
+    opacity: 0;
+    z-index: -1;
+    border-radius: 8px;
+}
+
+#proyectos .project:hover::before {
+    opacity: 1;
+}
+
+/* Otros estilos para los íconos de contacto en la sección de Contacto */
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.contact-icon {
+    margin: 0 10px;
+    font-size: 30px;
+    color: #00ffff;
+    transition: color 0.3s;
+}
+
+.contact-icon:hover {
+    color: #005555;
+}
+
+    /* Estilos para el fondo animado */
+    .animated-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* Colocar detrás de todo el contenido */
+        background: radial-gradient(circle, #010101 0%, #0f0f0f 40%, #1a1a1a 70%);
+        background-size: 300% 300%;
+        animation: animateBackground 10s ease infinite;
+    }
+
+/* Modal de bienvenida */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    animation: slideDown 0.4s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Icono animado de engranaje */
+.animated-gear {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    background: #00ffff;
+    clip-path: polygon(
+        25% 0%, 35% 10%, 50% 5%, 65% 10%, 75% 0%, 85% 15%, 100% 25%, 90% 35%, 95% 50%, 
+        90% 65%, 100% 75%, 85% 85%, 75% 100%, 65% 90%, 50% 95%, 35% 90%, 25% 100%, 
+        15% 85%, 0% 75%, 10% 65%, 5% 50%, 10% 35%, 0% 25%, 15% 15%
+    );
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+    @keyframes animateBackground {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+/* Íconos de contacto */
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.contact-icon {
+    margin: 0 10px;
+    font-size: 30px;
+    color: #00ffff;
+    transition: color 0.3s;
+}
+
+.contact-icon:hover {
+    color: #005555;
+}
+
+/* Estilos para el botón de volver arriba */
+#btn-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #00ffff;
+    color: #111;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 3; /* Asegura que esté encima del contenido */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+#btn-to-top:hover {
+    background-color: #005555;
+}
+
+/* Estilos para la sección de Habilidades y Tecnologías */
+#habilidades {
+    padding: 40px 0;
+    text-align: center;
+    background-color: #111;
+    color: #fff;
+}
+
+#habilidades h2 {
+    margin-bottom: 20px;
+    color: #00ffff;
+}
+
+.skills-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.skills-list li {
+    margin: 10px;
+    font-size: 18px;
+}
+
+.skills-list li i {
+    margin-right: 10px;
+    font-size: 24px;
+}

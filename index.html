@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Web</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Fondo animado futurista -->
+    <div class="animated-bg"></div>
+
+    <header>
+        <div class="container">
+            <h1>Mi Portafolio</h1>
+            <nav>
+                <ul>
+                    <li><a href="#sobre-mi" aria-label="Ir a la sección Sobre Mí"><i class="fas fa-user"></i></a></li>
+                    <li><a href="#proyectos" aria-label="Ir a la sección Proyectos"><i class="fas fa-project-diagram"></i></a></li>
+                    <li><a href="#contacto" aria-label="Ir a la sección Contacto"><i class="fas fa-envelope"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="sobre-mi">
+        <div class="container">
+            <h2>Sobre Mí</h2>
+            <p>Me llamo Santino Vultaggio y soy un desarrollador web junior que se especializa en el ámbito del front-end.</p>
+        </div>
+    </section>
+
+    <section id="habilidades">
+        <div class="container">
+            <h2>Habilidades y Tecnologías</h2>
+            <ul class="skills-list">
+                <li><i class="fab fa-html5"></i> HTML</li>
+                <li><i class="fab fa-css3-alt"></i> CSS</li>
+                <li><i class="fab fa-js"></i> JavaScript</li>
+                <li><i class="fab fa-react"></i> React.js</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="proyectos">
+        <div class="container">
+            <h2>Proyectos</h2>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <div class="container">
+            <h2>Contacto</h2>
+            <div class="contact-icons">
+                <a href="https://wa.me/+541169122888" class="contact-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.linkedin.com/public-profile/settings" class="contact-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:vultaggio.santino.2003@gmail.com" class="contact-icon" target="_blank"><i class="far fa-envelope"></i></a>
+                <a href="https://github.com/tu-usuario" class="contact-icon" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Portafolio Web &copy; 2024 - Santino Vultaggio</p>
+        </div>
+    </footer>
+
+    <button id="btn-to-top" title="Volver arriba"><i class="fas fa-arrow-up"></i></button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const proyectosContainer = document.querySelector('#proyectos .container');
+            const proyectosJSON = 'proyectos.json';
+
+            fetch(proyectosJSON)
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(proyecto => {
+                        const projectHTML = `
+                            <div class="project">
+                                <h3>${proyecto.titulo}</h3>
+                                <p>${proyecto.descripcion}</p>
+                                <button class="ver-proyecto-web">Ver Proyecto</button>
+                            </div>
+                        `;
+                        proyectosContainer.innerHTML += projectHTML;
+                    });
+
+                    const verProyectoWebButtons = document.querySelectorAll('.ver-proyecto-web');
+                    verProyectoWebButtons.forEach(button => {
+                        button.addEventListener('click', function() {
+                            const projectTitle = button.parentElement.querySelector('h3').textContent.trim();
+                            const projectUrls = data.reduce((urls, proyecto) => {
+                                urls[proyecto.titulo] = proyecto.url;
+                                return urls;
+                            }, {});
+
+                            window.open(projectUrls[projectTitle], '_blank');
+                        });
+                    });
+                })
+                .catch(error => console.error('Error al cargar proyectos:', error));
+
+            // Botón para volver arriba
+            const btnToTop = document.getElementById('btn-to-top');
+
+            btnToTop.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

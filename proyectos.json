@@ -1,0 +1,12 @@
+[
+    {
+        "titulo": "Entretenimiento Total",
+        "descripcion": "Mi idea para este proyecto fue crear una página web en la cual cada sección tiene un enlace a diferentes servicios de entretenimiento, como por ejemplo: películas, música, videojuegos, etc. Además, para desarrollar esta página web utilice las tecnologías de CSS, HTML y JavaScript.",
+        "url": "https://santino-vultaggio.github.io/Proyecto-de-entretenimiento/"
+    },
+    {
+        "titulo": "Tarjeta de Taxi",
+        "descripcion": "En este proyecto, mi idea fue crear una tarjeta de taxi digital para que un familiar que es taxista pueda compartir con los pasajeros y promocionar sus servicios para futuros viajes. Además, diseñé la tarjeta con un estilo responsivo para que se adapte a diferentes dispositivos y tamaños de pantalla. Para desarrollar esta web, utilicé tecnologías como HTML, CSS, React y JavaScript",
+        "url": "https://carta-de-taxi.vercel.app/"
+    }
+]
