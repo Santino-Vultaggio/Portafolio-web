@@ -12,6 +12,6 @@
     {
         "titulo": "Lista de precios de cigarrillos",
         "descripcion": "En este proyecto, mi objetivo fue crear una lista de precios digitalizada de cigarrillos para un familiar que trabaja en el rubro de la venta de tabaco, de modo que los clientes pudieran acceder a la lista de manera más conveniente. Diseñé la lista con un estilo responsivo para que se adapte a diferentes dispositivos y tamaños de pantalla. Para desarrollar esta web, utilicé tecnologías como HTML, CSS, React y JavaScript.",
-        "url": "https://carta-de-taxi.vercel.app/"
+        "url": "https://distribuidora-cigarros.vercel.app/"
     }
 ]
